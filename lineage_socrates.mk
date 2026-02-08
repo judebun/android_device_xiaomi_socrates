@@ -14,6 +14,9 @@ $(call inherit-product, device/xiaomi/socrates/device.mk)
 # Inherit LineageOS configurations
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+#aviumui配置
+include device/xiaomi/socrates/avium_common.mk
+
 PRODUCT_NAME := lineage_socrates
 PRODUCT_DEVICE := socrates
 PRODUCT_MODEL := 22127RK46C
