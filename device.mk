@@ -24,3 +24,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+    
+#releasekey
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/certs/releasekey
