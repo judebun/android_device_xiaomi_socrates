@@ -630,9 +630,7 @@ vendor/etc/df_default.xml
 vendor/etc/display/3dlut-pt-onnx-ptq-htp-fp16.dlc
 vendor/etc/displayconfig/display_layout_configuration.xml
 
-# Dolby
-odm/etc/dolby/dax-default.xml
-odm/etc/dolby_vision.cfg
+
 
 # Fingerprint
 odm/lib64/hw/fingerprint.goodix_fod.so:odm/lib64/hw/fingerprint.goodix_fod.default.so;FIX_SONAME

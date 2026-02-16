@@ -29,4 +29,9 @@ BOOT_KERNEL_MODULES += \
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
+
+PRODUCT_SOONG_NAMESPACES += hardware/dolby
+
 include vendor/xiaomi/socrates/BoardConfigVendor.mk
+
+BUILD_BROKEN_VINTF_HIERARCHY_CHECK := true
