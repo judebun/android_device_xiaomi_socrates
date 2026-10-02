@@ -29,4 +29,5 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Kernel
 PRODUCT_PACKAGES += \
-    kernel
+    kernel \
+    kernel_modules_vendor_ramdisk
