@@ -12,9 +12,12 @@ $(call inherit-product, build/make/target/product/core_64_bit_only.mk)
 $(call inherit-product, device/xiaomi/socrates/device.mk)
 
 # Inherit LineageOS configurations
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+UWU_DEVICE_TYPE := phone
+UWU_SUPPORTS_TELEPHONY := true
+UWU_MAINTAINER := 觉得不能
+$(call inherit-product, vendor/uwu/config/common.mk)
 
-PRODUCT_NAME := lineage_socrates
+PRODUCT_NAME := uwu_socrates
 PRODUCT_DEVICE := socrates
 PRODUCT_MODEL := 22127RK46C
 PRODUCT_BRAND := Redmi

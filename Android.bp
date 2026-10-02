@@ -1,0 +1,90 @@
+
+
+uwu_kernel {
+    name: "kernel",
+    kernel_dir: "kernel/xiaomi/sm8550",
+    kernel_arch: "arm64",
+    image_name: "Image",
+    clang_version: "clang-r563880c",
+
+    config: {
+        defconfig: "gki_defconfig",
+        fragments: [
+            "vendor/kalama_GKI.config",
+            "vendor/socrates_GKI.config",
+        ],
+    },
+
+    additional_flags: [
+        "BOARD_PLATFORM=kalama",
+    ],
+
+    environment: [
+        "TARGET_BOARD_PLATFORM=kalama",
+    ],
+
+    dtb: {
+        enabled: true,
+        qcom_merge: true,
+        target: "dtbs",
+        image_name: "dtb.img",
+    },
+
+    dtbo: {
+        enabled: true,
+        target: "dtbs",
+        image_name: "dtbo.img",
+        page_size: 4096,
+    },
+
+    modules: {
+        enabled: true,
+        external_module_root: "kernel/xiaomi/sm8550-modules",
+        external_modules: [
+            "qcom/opensource/mmrm-driver",
+            "qcom/opensource/mm-drivers/hw_fence",
+            "qcom/opensource/mm-drivers/msm_ext_display",
+            "qcom/opensource/mm-drivers/sync_fence",
+            "qcom/opensource/audio-kernel",
+            "qcom/opensource/camera-kernel",
+            "qcom/opensource/dataipa/drivers/platform/msm",
+            "qcom/opensource/datarmnet/core",
+            "qcom/opensource/datarmnet-ext/aps",
+            "qcom/opensource/datarmnet-ext/offload",
+            "qcom/opensource/datarmnet-ext/shs",
+            "qcom/opensource/datarmnet-ext/perf",
+            "qcom/opensource/datarmnet-ext/perf_tether",
+            "qcom/opensource/datarmnet-ext/sch",
+            "qcom/opensource/datarmnet-ext/wlan",
+            "qcom/opensource/securemsm-kernel",
+            "qcom/opensource/display-drivers/msm",
+            "qcom/opensource/eva-kernel",
+            "qcom/opensource/video-driver",
+            "qcom/opensource/graphics-kernel",
+            "qcom/opensource/wlan/platform",
+            "qcom/opensource/wlan/qcacld-3.0/.kiwi_v2",
+            "qcom/opensource/bt-kernel",
+            "nxp/opensource/driver",
+        ],
+        vendor_dlkm_module_install_list: [
+            "device/xiaomi/sm8550-common/modules.load.vendor_dlkm",
+        ],
+        vendor_dlkm_module_load_list: [
+            "device/xiaomi/sm8550-common/modules.load.vendor_dlkm",
+        ],
+        vendor_dlkm_install_all: true,
+        vendor_ramdisk_module_install_list: [
+            "device/xiaomi/sm8550-common/modules.load.recovery",
+        ],
+        vendor_ramdisk_module_load_list: [
+            "device/xiaomi/sm8550-common/modules.load.first_stage",
+        ],
+        recovery_module_install_list: [
+            "device/xiaomi/sm8550-common/modules.load.recovery",
+        ],
+        recovery_module_load_list: [
+            "device/xiaomi/sm8550-common/modules.load.recovery",
+        ],
+        auto_collect_deps: true,
+    },
+}

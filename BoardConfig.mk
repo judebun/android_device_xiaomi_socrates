@@ -13,17 +13,12 @@ include device/xiaomi/sm8550-common/BoardConfigCommon.mk
 TARGET_SCREEN_DENSITY := 540
 
 # Kernel
-BOARD_VENDOR_KERNEL_MODULES_LOAD += \
-    wl2866d.ko \
-    xiaomi_touch.ko \
-    goodix_core.ko \
-    goodix_fod.ko
+BOARD_USES_SOONG_KERNEL := true
+SOONG_KERNEL_MODULE := //device/xiaomi/socrates:kernel
+TARGET_KERNEL_VERSION := 5.15
 
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD += \
-    goodix_core.ko
 
-BOOT_KERNEL_MODULES += \
-    goodix_core.ko
+
 
 # System properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
